@@ -1,0 +1,82 @@
+/* HERO PAGE */
+section.hero{
+  margin-top: 3rem;
+}
+/* NAVBAR PAGE */
+img.login-image{
+  position: relative;
+  
+}
+div.loginEmoji{
+  font-size: 20px;
+}
+p.modal-card-title{
+  text-decoration: underline;
+}
+/* ABOUT-US PAGE */
+div.about-us{
+  margin-top: 4rem;
+}
+/* CART PAGE */
+div.cart{
+  margin-top: 4rem;
+}
+/* FRONT PAGE aka MAIN PAGE */
+
+/* PRODUCT PAGE */
+div.product{
+  margin: 5rem 2rem 1rem 2rem;
+}
+/* USER ACCOUNT PAGE */
+div.user{
+  margin-top: 4rem;
+}
+/* LOGIN PAGE */
+div.login{
+  margin-top: 4rem;
+}
+#login-image{
+  animation: anim 5s infinite;
+}
+@keyframes anim {
+  0% {transform: translateX(0);}
+  100% {transform: translateX(600px);}
+  100% {opacity: 0;}
+}
+@media(max-width: 415px) {
+  @keyframes anim {
+  0% {transform: translateX(0);}
+  100% {transform: translateX(400px)}
+  100% {opacity: 0}
+}
+}
+
+div.loginEmoji{
+  font-size: 2rem;
+}
+p.modal-card-title{
+  text-decoration: underline;
+}
+/* REGISTER PAGE */
+div.register{
+  margin-top: 4rem;
+}
+div.SignUpEmoji{
+  font-size: 3rem;
+  animation: hand 3s infinite;
+}
+@keyframes hand {
+  0% {transform: translateY(0)}
+  20% {transform: translateY(0)}
+  40% {transform: translateY(-25px)}
+  50% {transform: translateY(0)}
+  100% {transform: translateY(0)}
+}
+/* GEOLOCATION PAGE */
+div.geolocation{
+  margin-top: 4rem;
+}
+/* PAYMENT PAGE */
+div.payment{
+  margin-top: 4rem;
+}
