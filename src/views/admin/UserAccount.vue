@@ -1,13 +1,8 @@
 <template>
-  <div class="user">
-    User Account
-  </div>
+ <div>Hello User Account</div>
 </template>
 <script>
-
 export default {
-  components: {
-    
+   
   }
-}
 </script>

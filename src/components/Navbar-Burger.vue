@@ -1,5 +1,5 @@
 <template>
-  <a role="button" @click="callNavMenu" :class="{'navbar-burger': isActive, 'burger': isBurger, 'is-active': toggleActive }" v-on:click="toggleActive = !toggleActive" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+  <a role="button" @click="callNavMenu" :class="{'navbar-burger': isActive, 'burger': isBurger, 'is-active': toggleActive }" v-on:click="toggleActive = !toggleActive" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" id="navbarBurgerMenu">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>

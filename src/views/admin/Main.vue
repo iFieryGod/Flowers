@@ -19,7 +19,7 @@
                 <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
             </figure>
             <p class="title is-5">Indoor</p>
-            <router-link to="/product" class="button is-danger">Check Out</router-link>
+            <router-link to="/user" class="button is-danger">Check Out</router-link>
           </div>
         </div>
         <div class="column">
@@ -37,7 +37,7 @@
                 <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
             </figure>
             <p class="title is-5">Sour diesel</p>
-            <router-link to="/product" class="button is-danger">Check Out</router-link>
+            <router-link to="/product/payment/geolocation" class="button is-danger">Check Out Location</router-link>
           </div>
         </div>
       </div>
