@@ -3,11 +3,14 @@ import App from './App.vue'
 import './assets/sass/main.scss'
 import './assets/css/style.css'
 import router from './router'
+import SimpleVueValidation from 'simple-vue-validator';
 import VSocket from 'vue-socket.io'
 import * as VueGoogleMaps from 'vue2-google-maps'
 import store from './store'
 import { auth } from './firebase'
+import vuetify from './plugins/vuetify';
 
+Vue.use(SimpleVueValidation);
 Vue.use(
   new VSocket({
     debug: true,
@@ -28,10 +31,11 @@ let app
 auth.onAuthStateChanged(() => {
   if(!app) {
     app = new Vue({
-  router,
-  store,
-  render: h => h(App)
-  }).$mount('#app')
+      router,
+      store,
+      vuetify,
+      render: h => h(App)
+    }).$mount('#app')
   }
 })
 

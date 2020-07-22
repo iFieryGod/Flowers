@@ -14,18 +14,19 @@
             <div v-if="!showSuccess">
               <p class="has-text-dark has-text-weight-semibold is-family-code is-uppercase">Enter your email to reset your password</p>
               <form @submit.prevent>
-                <p class="control has-icons-left has-icons-right">
-                  <input v-model.trim="email" class="input" type="email" placeholder="you@email.com" />
+                <div class="control has-icons-left has-icons-right">
+                  <input v-model.trim="email" class="input" type="email" placeholder="you@email.com" :class="{error: validation.hasError('email'), valid: validation.isTouched('email') && !validation.hasError('email')}" required>
+                  <div class="has-text-danger" v-if="validation.hasError('email')">{{ validation.firstError('email')}}</div>
                   <span class="icon is-small is-left">
                     <i class="fas fa-envelope"></i>
                   </span>
                   <span class="icon is-small is-right">
                     <i class="fas fa-check"></i>
                   </span>
-                </p>
+                </div>
               </form>
               <p v-if="errorMsg !== ''" class="error has-text-danger">{{ errorMsg }}</p>
-              <button @click="resetPassword()" class="button is-danger is-family-code is-uppercase has-text-weight-bold mt-2">Reset</button>
+              <button @click="resetPassword()" :disabled="validation.countErrors() > 0" class="button is-danger is-family-code is-uppercase has-text-weight-bold mt-2">Reset</button>
             </div>  
           </div>
         </section>
@@ -36,8 +37,8 @@
     </div>
   </div>
 </template>
-
 <script>
+import { Validator } from 'simple-vue-validator'
 import Hero from '@/components/Hero'
 import { auth } from '@/firebase'
 export default {
@@ -51,6 +52,11 @@ export default {
   },
   components: {
     Hero
+  },
+  validators: {
+    'email': function (value) {
+      return Validator.value(value).required().email();
+    }
   },
   methods: {
     async resetPassword() {
