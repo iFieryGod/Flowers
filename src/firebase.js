@@ -12,10 +12,10 @@ const firebaseConfig = {
   appId: '1:22199809439:web:4b7ab16cd9c6b28a79b9aa'
 }
 
-firebase.initializeApp(firebaseConfig)
+firebase.default.initializeApp(firebaseConfig);
 
-const db = firebase.firestore()
-const auth = firebase.auth()
+const db = firebase.default.firestore()
+const auth = firebase.default.auth()
 
 const userProfiles = db.collection('users')
 const siteProducts = db.collection('products')
